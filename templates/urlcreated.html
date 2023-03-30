@@ -1,28 +1,39 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <center>
-    <div class="alert alert-primary" role="alert">
-        <h1>Your Short URL: <span id="short-url"> http://127.0.0.1:8000/{{ chars }}</span> </h1>
-        <h4>Copy the url and paste it to your website it will redirect you to page</h4>
+  <div class="alert alert-primary" role="alert">
+    <h1>
+      Your Short URL:
+      <span id="short-url">
+        https://url-shorter-teal.vercel.app/{{ chars }}</span
+      >
+    </h1>
+    <h4>
+      Copy the url and paste it to your website it will redirect you to page
+    </h4>
 
-        <button onclick="myFunction()" class="btn btn-success" onmouseout="outFunc()">
-            <span class="tooltiptext" id="myTooltip">Copy Link </span>
-            Copy text
-            </button>
-    </div>
+    <button
+      onclick="myFunction()"
+      class="btn btn-success"
+      onmouseout="outFunc()"
+    >
+      <span class="tooltiptext" id="myTooltip">Copy Link </span>
+      Copy text
+    </button>
+  </div>
 </center>
 
 <script>
-    function myFunction() {
+  function myFunction() {
     var shortUrl = document.getElementById("short-url").innerText;
-     // Use the Clipboard API to copy the text to the clipboard
-			navigator.clipboard.writeText(shortUrl).then(function() {
-				alert("Short URL copied to clipboard!");
-			}, function() {
-				alert("Failed to copy short URL to clipboard.");
-			});
-        }
-   
-    </script>
+    // Use the Clipboard API to copy the text to the clipboard
+    navigator.clipboard.writeText(shortUrl).then(
+      function () {
+        alert("Short URL copied to clipboard!");
+      },
+      function () {
+        alert("Failed to copy short URL to clipboard.");
+      }
+    );
+  }
+</script>
 {% endblock content %}
